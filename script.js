@@ -1,3 +1,7 @@
+// استخدم Firebase كـ Modules  
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";  
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js"; 
+
 // إعداد Firebase  
 const firebaseConfig = {  
     apiKey: "AIzaSyDgp7dxrnf5dmUpdsTyi7GVrVXq-CVyNW0",  
@@ -9,8 +13,8 @@ const firebaseConfig = {
     appId: "1:477141160451:web:6aaf4f1d462292d41bf436"  
 };  
 
-const app = firebase.initializeApp(firebaseConfig);  
-const database = firebase.database();  
+const app = initializeApp(firebaseConfig);  
+const database = getDatabase(app);  
 
 const board = document.getElementById('board');  
 const statusDisplay = document.getElementById('status');  
